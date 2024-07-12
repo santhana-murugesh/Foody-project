@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foods</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <h1>FooDy</h1>
+      <div class="Nav-bar-links">
+        <p class="Nav-bar-link"><a href="">Home </a></p>
+        <p class="Nav-bar-link"><a href="">Contact us </a></p>
+      </div>
+      <div class="toggle-menu">
+        <i onclick="openSidebar()" class="fa-solid fa-bars"></i>
+      </div>
+      <div class="cart">
+        <i onclick="showCart()" class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </nav>
+    <div>
+      <input
+        type="text"
+        class="inputbox"
+        placeholder="Search"
+        onkeyup="check(event)"
+      />
+      <!-- cart box -->
+    </div>
+    <div class="cart-1">
+      <div class="cart-title">Cart item</div>
+
+      <!-- Cart items -->
+      <div class="cartcontent" id="cart-content-1">
+        <!-- <div class="cart-box">
+            <img src="Creamy-Calabrian-Chili-Pappardelle-4-scaled.jpg" style="width: 100px;" class="cart-img">
+            <div class="cart-detailbox">
+              <div class="cart-food-title">Pappardelle with Vegetable</div>
+              <div class="pricebox">
+               
+                <div class="cart-amnt">RS.10</div>
+              </div>
+              <input type="number" value="1" class="cart-quantity">
+            </div>
+            <i onclick="deleteCartItem('cart-content-1')" class="fa-solid fa-trash" id="dlt"></i>
+          </div> -->
+      </div>
+
+      <i onclick="closeCart()" id="icon" class="fa-solid fa-xmark"></i>
+    </div>
+
+    <!-- cart box  -->
+
+    <!-- side-nav-bar -->
+    <div class="side-nav-bar">
+      <p style="text-align: right">
+        <i
+          style="color: black; padding: 8px"
+          onclick="closeSidebar()"
+          class="fa-solid fa-xmark"
+        ></i>
+      </p>
+      <div class="side-Nav-bar-links">
+        <p class="side-Nav-bar-link"><a href="">Home</a></p>
+        <p class="side-Nav-bar-link"><a href="">Menus</a></p>
+        <p class="side-Nav-bar-link"><a href="">About Us</a></p>
+        <p class="side-Nav-bar-link"><a href="">Contact Us</a></p>
+      </div>
+    </div>
+
+    <marquee class="foods">
+      <h1>
+        Welcome to our Online Food Portal ! Thank you for choosing us to be a
+        part of your dining journey.
+      </h1>
+    </marquee>
+    <!-- header -->
+
+    <div class="header">
+      <div>
+        <h1>Its Not Just A food</h1>
+        <h4>its an Experience</h4>
+        <button>Order Now</button>
+      </div>
+      <div class="photo">
+        <img src="resize-17205056101545869432bri.jpg" />
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="service-container-1">
+        <div>
+          <h2>We Provide Best Customer Experinces</h2>
+        </div>
+
+        <div>
+          <h4>We ensure that Our customer have the best Taste experience</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-container-2">
+      <div id="one" class="service-item">
+        <p><img src="Creamy-Calabrian-Chili-Pappardelle-4-scaled.jpg" /></p>
+        <h3>Pappardelle</h3>
+        <h6>with Vegetable</h6>
+        <p>Rs.120</p>
+        <div class="popup">
+          <p>This is a delicious dish of Pappardelle with Vegetable</p>
+          <button
+            onclick="addToCart('Pappardelle with Vegetable', 120,'Creamy-Calabrian-Chili-Pappardelle-4-scaled.jpg')"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <p>
+          <img
+            id="bri"
+            src="air-fryer-chicken-biryani-recipe_6968eb6ab4a5ae22d136dab86c9ea8af-768x768.jpeg"
+          />
+        </p>
+        <h3>Briyani</h3>
+        <h6>with Chicken</h6>
+        <p>Rs.300</p>
+        <div class="popup">
+          <p>This is a delicious dish of Biryani with Chicken</p>
+          <button
+            onclick="addToCart('Briyani with Chicken', 300,'air-fryer-chicken-biryani-recipe_6968eb6ab4a5ae22d136dab86c9ea8af-768x768.jpeg')"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <p><img src="id.jpg" /></p>
+        <h3>Idly</h3>
+        <h6>with chuttney</h6>
+        <p>Rs.80</p>
+        <div class="popup">
+          <p>This is a delicious dish of Idly with Chuttney</p>
+          <button onclick="addToCart('Idly with chuttney', 80,'id.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <p><img src="p.jpg" /></p>
+        <h3>pongal</h3>
+        <h6>with Chicken</h6>
+        <p>Rs.130</p>
+        <div class="popup">
+          <p>This is a delicious dish of pongal with chicken</p>
+          <button onclick="addToCart('Pongal With Chicken', 130,'p.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <p><img src="o.jpg" /></p>
+        <h3>omlette</h3>
+        <h6>with onion</h6>
+        <p>Rs.30</p>
+        <div class="popup">
+          <p>This is a delicious dish of Omlette with onion</p>
+          <button onclick="addToCart('omlette with onion', 30,'o.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <p><img src="d.jpg" /></p>
+        <h3>Dosa</h3>
+        <h6>with Chicken</h6>
+        <p>RS.70</p>
+        <div class="popup">
+          <p>This is a delicious dish of Dosa with Chicken</p>
+          <button onclick="addToCart('Dosa with Chicken', 70,'d.jpg')">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <p><img src="Chicken-Chettinad-Thumbnail.jpg" /></p>
+        <h3>Chettinad Gravy</h3>
+        <h6>with Rice</h6>
+        <p>Rs.200</p>
+        <div class="popup">
+          <p>This is a delicious dish of Chettinad Gravy with rice</p>
+          <button
+            onclick="addToCart('Chettinad Gravy with rice', 200,'Chicken-Chettinad-Thumbnail.jpg')"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <hr style="margin-top: 5%" />
+
+    <!-- review -->
+
+    <div style="text-align: center">
+      <div class="review">
+        <div class="reviewcontent">
+          <h2>Our Best Sellers</h2>
+        </div>
+        <div style="text-align: center">
+          <p>
+            The Best Cellar Restaurant in Blowing Rock, North Carolina was
+            established in 1975.
+          </p>
+          <p>
+            on Main Streetsoups, sandwiches, and new and used books. The name
+            was derived from the fact that the
+          </p>
+          <p>
+            restaurant sold books in a basement, hence The Best Cellar. Over the
+            years, the menu evolved from sandwiches
+          </p>
+          <p>and soups to the freshest of meats and seafood.</p>
+        </div>
+        <div class="satheesh" style="display: flex">
+          <div class="group-head">
+            <div class="group-guide">
+              <img
+                src="/Chicken-Chettinad-Thumbnail.jpg"
+                style="width: 180px; height: 200px"
+              />
+              <h2>Chettinad</h2>
+            </div>
+          </div>
+          <div class="group-head">
+            <div class="group-guide">
+              <img src="/chi pr.jpg" style="width: 180px; height: 200px" />
+              <h2>Chicken Protta</h2>
+            </div>
+          </div>
+          <div class="group-head">
+            <div class="group-guide">
+              <img src="/p.jpg" style="width: 180px; height: 200px" />
+              <h2>Pongal</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+
+    <div class="footer">
+      <div class="content">
+        <div class="logo">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+        <div class="links">
+          <h2>HOME</h2>
+          <h2>MENU</h2>
+          <h2>STORY</h2>
+          <h2>LOCATION</h2>
+        </div>
+        <div class="link">
+          <p><a href="">CONTACT |</a></p>
+          <p><a href="">BLOG |</a></p>
+          <p><a href="">SERVICE |</a></p>
+          <p><a href="">DELIVERY</a></p>
+        </div>
+      </div>
+      <div class="footer-2">
+        <p>HEALTH FAST-CASUAL-FOOD</p>
+        <p>@2024.COPYRIGHTS</p>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
